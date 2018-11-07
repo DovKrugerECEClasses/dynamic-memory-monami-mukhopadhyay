@@ -55,6 +55,11 @@ class Bitmap {
               }
           }
       }
+	  
+	  ~Bitmap(){
+		  delete [] bitmap;
+	  }
+	  
   
      friend ostream& operator <<(ostream& s, const Bitmap b) {
           for(int i=0;i<b.l;i++) {
