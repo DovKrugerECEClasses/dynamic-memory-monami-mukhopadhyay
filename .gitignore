@@ -35,3 +35,10 @@ build/
 *~
 
 .idea/
+
+*.stl
+
+test.cpp
+
+cmake-build-debug/
+CMakeLists.txt

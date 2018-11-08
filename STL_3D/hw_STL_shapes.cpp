@@ -27,7 +27,7 @@ Cylinder::Cylinder(double r, double h) {
 
     //================================================================
     // generate the upper and bottom sides first,
-    vector<vector<vector<double> > > coord_vec_top_bottom{
+    vector < vector < vector < double > > > coord_vec_top_bottom{
             {
                     {ZERO,       (-r),       9999.0},
                     {ZERO, ZERO, 9999.0},
@@ -102,7 +102,7 @@ Cylinder::Cylinder(double r, double h) {
             }
     };
 
-    vector<vector<vector<double> > > coord_vec_top_bottom_cp = coord_vec_top_bottom;
+    vector < vector < vector < double > > > coord_vec_top_bottom_cp = coord_vec_top_bottom;
 
     ofstream o_file;
     o_file.open(file_loc);
@@ -156,7 +156,7 @@ Cylinder::Cylinder(double r, double h) {
     o_file << '\n' << '\n';
     o_file.close();
     //================================================================
-    vector<vector<double>> coord_vec_top(12, vector<double>(3, ZERO));
+    vector <vector<double>> coord_vec_top(12, vector<double>(3, ZERO));
 
     for (auto &i : coord_vec_top_bottom_cp)
         for (auto j = i.begin(); j != i.end(); ++j)
@@ -167,7 +167,7 @@ Cylinder::Cylinder(double r, double h) {
             for (auto k = 0; k < coord_vec_top_bottom_cp[i][j].size(); ++k)
                 coord_vec_top[i][k] = coord_vec_top_bottom_cp[i][j][k];
 
-    vector<vector<double>> coord_vec_bot = coord_vec_top;
+    vector <vector<double>> coord_vec_bot = coord_vec_top;
 
     for (int i = 0; i < coord_vec_top.size(); i++) { // Size 12
         for (int j = 0; j < coord_vec_top[i].size(); j += 1) { // Size 3
@@ -296,7 +296,7 @@ Cube::Cube(double s) : side(s) { this->file_loc = "cube.stl"; }
 
 void Cube::translate(double x, double y, double z) {
 
-    vector<vector<vector<double> > > coord_vec{
+    vector < vector < vector < double > > > coord_vec{
             {
                     {0 + x,    side + y, side + z},
                     {side + x, 0 + y,    side + z},

@@ -1,0 +1,2 @@
+/Users/XG/Documents/CPP/dynamic-memory-monami-mukhopadhyay/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/XG/Documents/CPP/dynamic-memory-monami-mukhopadhyay/cmake-build-debug/CMakeFiles/edit_cache.dir
