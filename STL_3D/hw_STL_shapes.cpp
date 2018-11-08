@@ -1,5 +1,5 @@
 //
-// Created by Xingyuan Guo on 10/10/18.
+// Created by Xingyuan Guo & Monami Mukhopadhyay on 10/10/18.
 //
 
 #include "hw_STL_shapes.h"
