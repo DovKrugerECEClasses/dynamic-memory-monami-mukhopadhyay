@@ -1,3 +1,7 @@
+/* 
+Author: Xingyuan Guo & Monami Mukhopadhyay
+Program: String
+*/
 #include "String.hh"
 
 using namespace std;
