@@ -17,18 +17,21 @@ private:
 
 public:
     String();
+
     String(const char str[]);
 
     String operator+=(const String &s); //append to the end
 
     String(const char str[], uint32_t mult);
 
-    ~String(){ delete [] s;}
+    ~String() { delete[] s; }
 
     //copy constructor
     String(const String &orig);
 
     String &operator=(const String &orig);
+
+    String substring(uint32_t start, uint32_t len);
 
     char operator[](const uint32_t pos) const;
 
@@ -39,6 +42,8 @@ public:
             os << str.s[i];
         return os;
     }
+
+    void replace(char ori, char repl);
 
 
 };

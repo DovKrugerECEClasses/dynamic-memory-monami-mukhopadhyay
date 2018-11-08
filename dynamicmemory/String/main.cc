@@ -1,4 +1,5 @@
 #include "String.cc"
+
 using namespace std;
 
 int main() {
@@ -22,14 +23,18 @@ int main() {
     String s3("xyz", 5); // xyzxyzxyzxyzxyz
     cout << s3 << '\n';
 
-//    String s4 = s3.substring(3, 2); // from position 3 length 2
-//    cout << s4 << '\n'; // "xy"
-//    char c = s3[3];
-//    cout << "c=" << c << '\n'; // x
-//    s3[4] = 'a';
-//    cout << s3 << '\n';// xyzxazxyzxyzxyz
-//    s3.replace('x', 'q');
-//    const String hello = "hello";
+    String s4 = s3.substring(3, 2); // from position 3 length 2
+    cout << s4 << '\n'; // "xy"
+
+    char c = s3[3];
+    cout << "c=" << c << '\n'; // x
+    s3[4] = 'a';
+    cout << s3 << '\n';// xyzxazxyzxyzxyz
+
+    s3.replace('x', 'q');
+    //cout << s3 << '\n';// xyzxazxyzxyzxyz
+
+    const String hello = "hello";
 //
 //    cout << hello.length() << '\n';
 //    s3.insert(5, hello);

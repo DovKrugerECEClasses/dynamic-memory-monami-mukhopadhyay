@@ -22,8 +22,7 @@ String String::operator+=(const String &newString) {
     return *this;
 }
 
-
-String::String(const char str[], uint32_t mult) : len(strlen(str) * mult), s(new char[len]) , capacity(len){
+String::String(const char str[], uint32_t mult) : len(strlen(str) * mult), s(new char[len]), capacity(len) {
     uint32_t strsize = strlen(str);
     int c = 0;
     for (int j = 0; j < mult; j++)
@@ -45,12 +44,30 @@ String &String::operator=(const String &orig) {
     return *this;
 }
 
-char String::operator[](const uint32_t pos) const {
-
+String String::substring(uint32_t start, uint32_t len) {
+    char *str = new char[len + 1];
+    for (uint32_t i = 0; i < len; i++)
+        str[i] = this->s[start + i];
+    return String(str);
 }
 
-char &String::operator[](uint32_t pos) {
+char String::operator[](const uint32_t pos) const {
+    try {
+        if (pos >= len)
+            throw 1;
+        return s[pos];
+    }
+    catch (exception &e) {
+        cout << "Standard exception: " << e.what() << endl;
+    }
+}
 
+char &String::operator[](uint32_t pos) { return s[pos]; }
+
+void String::replace(char ori, char repl) {
+    for (auto i = 0; i < len; i++)
+        if (s[i] == ori)
+            s[i] = repl;
 }
 
 
