@@ -35,10 +35,11 @@ int main() {
     //cout << s3 << '\n';// xyzxazxyzxyzxyz
 
     const String hello = "hello";
-//
-//    cout << hello.length() << '\n';
+    cout << hello.length() << '\n'; //5
+
 //    s3.insert(5, hello);
 //    cout << s3 << "\n";
-//    String s5 = s2 + s3;
-//    cout << s5 << '\n';
+
+    String s5 = s2 + s3;
+    cout << s5 << '\n';
 }

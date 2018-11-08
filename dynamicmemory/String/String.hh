@@ -45,6 +45,12 @@ public:
 
     void replace(char ori, char repl);
 
+    uint32_t length() const;
+
+    //void insert(uint32_t pos, const String &str)();
+
+
+    String operator+(const String& newString);
 
 };
 
