@@ -11,16 +11,17 @@ int main() {
     s2 += "def"; // make the cap to 6 instead of 3
     cout << s2 << '\n'; // prints abcdef
 
-//    String copy(s2);
-//    String copy2 = s2;
-//    String x = "qqq";
-//    copy2 = copy = x; // this is why we need to return String& in operator =
-//    cout << copy << '\n'; // prints qqq
-//    copy = copy; // for a single = it would not matter
-//    cout << copy << '\n'; // prints qqq
-//
-//    String s3("xyz", 5); // xyzxyzxyzxyzxyz
-//    cout << s3 << '\n';
+    String copy(s2);
+    String copy2 = s2;
+    String x = "qqq";
+    copy2 = copy = x; // this is why we need to return String& in operator =
+    cout << copy << '\n'; // prints qqq
+    copy = copy; // for a single = it would not matter
+    cout << copy << '\n'; // prints qqq
+
+    String s3("xyz", 5); // xyzxyzxyzxyzxyz
+    cout << s3 << '\n';
+
 //    String s4 = s3.substring(3, 2); // from position 3 length 2
 //    cout << s4 << '\n'; // "xy"
 //    char c = s3[3];
