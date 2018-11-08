@@ -1,5 +1,5 @@
 /*
-Author : Monami Mukhopadhyay
+Author : Monami Mukhopadhyay & Xingyuan Guo
 Program : Postscript output
 */
 
