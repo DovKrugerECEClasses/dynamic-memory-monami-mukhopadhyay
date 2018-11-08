@@ -1,3 +1,7 @@
+/* 
+Author: Xingyuan Guo & Monami Mukhopadhyay
+Program: String
+*/
 #include <iostream>
 #include <cstring>
 
