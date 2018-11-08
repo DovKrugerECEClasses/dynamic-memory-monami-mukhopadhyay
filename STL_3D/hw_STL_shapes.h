@@ -1,5 +1,5 @@
 //
-// Created by Xingyuan Guo on 10/15/18.
+// Created by Xingyuan Guo & Monami Mukhopadhyay on 10/15/18.
 //
 
 // This program can only do fixed number of resolution on cylinders, can be changed later, but requires work
