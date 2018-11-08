@@ -72,10 +72,6 @@ void String::replace(char ori, char repl) {
 
 uint32_t String::length() const { return this->len; }
 
-//void String::insert(uint32_t pos, const String &str) {
-//    memmove(s + pos + str.len, s + pos, len);
-//    memcpy(s + pos, str.s, str.len);
-//}
 String String::operator+(const String &newString) {
 
     this->checkGrow(newString.len);
@@ -90,7 +86,10 @@ String String::operator+(const String &newString) {
     return *this;
 }
 
-
+void String::insert(uint32_t pos, const String &str) {
+    memmove(s + pos + str.len, s + pos, len);
+    memcpy(s + pos, str.s, str.len);
+}
 
 
 

@@ -37,8 +37,8 @@ int main() {
     const String hello = "hello";
     cout << hello.length() << '\n'; //5
 
-//    s3.insert(5, hello);
-//    cout << s3 << "\n";
+    s3.insert(5, hello);
+    cout << s3 << "\n";
 
     String s5 = s2 + s3;
     cout << s5 << '\n';
