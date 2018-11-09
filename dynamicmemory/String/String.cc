@@ -91,6 +91,8 @@ String String::operator+(const String &newString) {
 }
 
 void String::insert(uint32_t pos, const String &str) {
+    checkGrow(str.len);
+    // void * memmove ( void * destination, const void * source, size_t num );
     memmove(s + pos + str.len, s + pos, len);
     memcpy(s + pos, str.s, str.len);
 }
