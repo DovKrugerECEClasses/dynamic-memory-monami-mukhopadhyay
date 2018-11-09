@@ -26,7 +26,8 @@ String String::operator+=(const String &newString) {
     return *this;
 }
 
-String::String(const char str[], uint32_t mult) : len(strlen(str) * mult), s(new char[len]), capacity(len) {
+String::String(const char str[], uint32_t mult) : len(strlen(str) * mult), s(new char[len]) {
+    checkGrow(len);
     uint32_t strsize = strlen(str);
     int c = 0;
     for (auto j = 0; j < mult; j++)
