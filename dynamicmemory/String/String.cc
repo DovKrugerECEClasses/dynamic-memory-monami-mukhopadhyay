@@ -18,11 +18,14 @@ String String::operator+=(const String &newString) {
     uint32_t new_len = this->len + newString.len;
     char *str = new char[new_len];
     memcpy(str, this->s, this->len); // copy over the orig content
-    for (auto i = 0; i < newString.len; i++)
-        str[this->len + i] = newString.s[i];
+    memcpy(str + newString.len, newString.s, newString.len);
+    // could do this also
+    //    for (auto i = 0; i < newString.len; i++)
+    //        str[this->len + i] = newString.s[i];
     this->len = new_len;
     this->s = str;
     //std::cout << "cap " << capacity << endl;
+    delete str;
     return *this;
 }
 
