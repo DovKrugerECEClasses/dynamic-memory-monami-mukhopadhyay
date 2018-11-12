@@ -25,7 +25,6 @@ String String::operator+=(const String &newString) {
     this->len = new_len;
     this->s = str;
     //std::cout << "cap " << capacity << endl;
-    delete str;
     return *this;
 }
 
