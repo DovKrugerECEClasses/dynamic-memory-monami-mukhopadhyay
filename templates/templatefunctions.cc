@@ -1,4 +1,37 @@
+/*
+Author: Monami Mukhopadhyay
+Program: Template functions
+*/
+#include<iostream>
+using namespace std;
 
+template<typename T>
+void sort(T x[],int n){
+  for(int i=0;i<n-1;i++){
+    for(int j=0;j<n-1;j++){
+      if (x[j]>x[j+1]){
+	swap(x[j],x[j+1]);
+      }
+    }
+  }
+}
+
+template<typename T>
+void print(T x[],int n){
+  for(int i=0;i<n;i++){
+    cout << x[i] << ' ';
+  }
+  cout << '\n';
+}
+
+template<typename T>
+T sum(T x[],int n){
+  T s=0;
+  for(int i=0;i<n;i++){
+    s += x[i];
+  }
+  return s;
+}
 
 int main() {
 	int a[] = {5, 4, 3, 1, 7, 8, 9, 2, 1};
