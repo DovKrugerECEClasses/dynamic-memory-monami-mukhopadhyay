@@ -1,4 +1,12 @@
-#include "Vec3d.hh"
+/*
+Author: Monami Mukhopadhyay
+Program: Template- Vec3d
+*/
+
+#include<iostream>
+#include "Vec3d.h"
+
+using namespace std;
 
 int main() {
 	Vec3d<float> a(1,2,3);
