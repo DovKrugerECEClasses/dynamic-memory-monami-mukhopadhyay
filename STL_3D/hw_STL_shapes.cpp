@@ -457,7 +457,7 @@ int main() {
     c.translate(x, y, z); //where is x,y and z?
     cout << c.volume() << '\n';
 
-    d.write("out.stl"); // how to get all my shapes into the same file
+    d.write("final.stl"); // how to get all my shapes into the same file
 
     d.add(c);
 
