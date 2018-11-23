@@ -1,3 +1,3 @@
 #### Overview
-This has the C++ implementation for Bitmap and String dynamic memory implementations
+This is the CPE-553 hw repo for Monamo Mukhopadhyay and Xingyuan Guo.
 
