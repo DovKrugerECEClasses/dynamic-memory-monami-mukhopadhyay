@@ -41,3 +41,4 @@ test.cpp
 
 cmake-build-debug/
 CMakeLists.txt
+*.out.dSYM/
