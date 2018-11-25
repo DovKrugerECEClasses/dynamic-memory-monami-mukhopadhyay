@@ -1,24 +1,15 @@
-#include "Fraction.hh"
-
+/*
+Author: Monami Mukhopadhyay & Xingyuan Guo
+Program: Fraction
+*/
+#include<iostream>
+#include "Fraction.h"
 using namespace std;
-Fraction::Fraction(int n, int d) { // TODO: finish initializer list :
-  
-}
 
-//friend
-Fraction operator +(Fraction a, Fraction b) {
-	//  a. b.
-}
+Fraction::Fraction(int n, int d):num(n),den(d) {}
 
 // member operator
-Fraction Fraction::operator -(Fraction f) {
-
+Fraction Fraction::operator -(const Fraction& f) {
+  return Fraction(num*f.den-den*f.num,den*f.den);
 }
 
-ostream& operator <<(ostream& s, Fraction b) {
-
-}
-
-//just here for illustration, you do not have to do anything
-void Fraction::simplify() {
-}
