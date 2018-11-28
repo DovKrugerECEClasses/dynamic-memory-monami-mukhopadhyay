@@ -46,11 +46,11 @@ void remove_tspan() {
 
 void round_off() {
 
-    ifstream infile("replaced.svg");
-    ofstream outfile("roundoff.svg");
+    ifstream infile("test.svg");
+    ofstream outfile("new.svg");
     string line;
     while (getline(infile, line)) {
-        regex e("([\"\\:][0-9]+\\.[0-9])[0-9]*");
+        regex e("([\\-\"\\:][0-9]+\\.[0-9])[0-9]*");
         smatch match;
         string newline = line;
         while (regex_search(line, match, e)) {
@@ -58,9 +58,8 @@ void round_off() {
                 string replacement = "$1";
                 newline = regex_replace(newline, e, replacement);
             }
-            line = match.suffix().str();
+            outfile << newline << endl;
         }
-        outfile << newline << endl;
     }
 }
 
