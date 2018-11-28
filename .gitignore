@@ -42,3 +42,6 @@ test.cpp
 cmake-build-debug/
 CMakeLists.txt
 *.out.dSYM/
+
+test.svg
+test*.svg
