@@ -1,3 +1,8 @@
+/*
+Author: Xingyuan Guo & Monami Mukhopadhyay
+Program: Regex
+*/
+
 // Reference:
 // https://www.ibm.com/developerworks/community/blogs/5894415f-be62-4bc0-81c5-3956e82276f3/entry/regular_expression_in_c_11_14?lang=en
 // http://cpprocks.com/files/c++11-regex-cheatsheet.pdf
@@ -35,15 +40,33 @@ void remove_tspan() {
 
         outFile << line << '\n';
     }
-
-}
+    }
 
 
 void round_off() {
-    //regex floating_regex("\\-?\\d+\\.\\d+"");
+
+  ifstream infile("test.svg");
+  ofstream outfile("new.svg");
+  string line;
+  while(getline(infile,line))
+    {
+    regex e("([\"\\:][0-9]+\\.[0-9])[0-9]*");
+    smatch match;
+    string newline = line;
+    while(regex_search(line,match,e)){
+      for (auto x:match){
+	string replacement = "$1";
+	newline = regex_replace(newline,e,replacement);
+        }
+      line = match.suffix().str();
+     }
+    outfile << newline << endl;
+  }
 }
 
 
 int main() {
+  remove_tspan();
+  round_off();
     return 0;
 }
