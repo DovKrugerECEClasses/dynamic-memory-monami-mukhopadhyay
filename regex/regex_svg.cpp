@@ -50,7 +50,7 @@ void round_off() {
   string line;
   while(getline(infile,line))
     {
-    regex e("([\"\\:][0-9]+\\.[0-9])[0-9]*");
+    regex e("([\\-\"\\:][0-9]+\\.[0-9])[0-9]*");
     smatch match;
     string newline = line;
     while(regex_search(line,match,e)){
