@@ -46,7 +46,7 @@ void remove_tspan() {
 
 
 void round_off() {
-    ofstream outfile("new.svg");
+    ofstream outfile("Periodic_new.svg");
 
     string line;
     for (auto i : vec_lines) {
