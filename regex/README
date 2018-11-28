@@ -2,6 +2,8 @@ Write a program to
 1. read in the xml file here and remove all <tspan> tags.
 This means matching <tspan ... />
 
+------ NO ITS NOT, ALSO NEEDS TO REMOVE </tspan> ----------
+
 2. read all floating point numbers 123.12712515
 and reduce to one digit after the decimal (round off)
 123.1
