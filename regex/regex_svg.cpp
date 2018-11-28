@@ -14,6 +14,7 @@ using namespace std;
 #include <regex>
 #include <string>
 #include <fstream>
+#include <vector>
 
 
 // regex_match - match regex to an entire char sequence
@@ -21,45 +22,44 @@ using namespace std;
 // regex_replace - replace occurrences of a regex with formatted replacement text
 // regex_iterator - iterates thru all regex matches within a char sequence
 
+std::vector <string> vec_lines;
+
 void remove_tspan() {
 
     string start_0 = "<tspan";
     string ends = "</tspan>";
 
-    //std::regex base_regex_0(start_0 + "(.*)" + ">" + "(.*)" + ends);
     std::regex base_regex_0(start_0 + "(.*?)" + ">");
     std::regex base_regex_1(start_0 + "(.*)" + "/>");
     std::regex base_regex_2(ends);
 
-    ofstream outFile("replaced.svg");
-    ifstream file("test.svg");
+    ifstream file("Periodic.svg");
     std::string line;
     while (std::getline(file, line)) {
         line = std::regex_replace(line, base_regex_0, " ");
         line = std::regex_replace(line, base_regex_1, " ");
         line = std::regex_replace(line, base_regex_2, " ");
 
-        outFile << line << '\n';
+        vec_lines.emplace_back(line);
     }
 }
 
 
 void round_off() {
-
-    ifstream infile("test.svg");
     ofstream outfile("new.svg");
+
     string line;
-    while (getline(infile, line)) {
+    for (auto i : vec_lines) {
         regex e("([\\-\"\\:][0-9]+\\.[0-9])[0-9]*");
         smatch match;
+        line = i;
         string newline = line;
         while (regex_search(line, match, e)) {
-            for (auto x:match) {
-                string replacement = "$1";
-                newline = regex_replace(newline, e, replacement);
-            }
-            outfile << newline << endl;
+            newline = regex_replace(newline, e, "$1");
+
+            line = match.suffix().str();
         }
+        outfile << newline << endl;
     }
 }
 
