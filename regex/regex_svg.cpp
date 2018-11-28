@@ -9,6 +9,7 @@ Program: Regex
 // https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
 
 using namespace std;
+
 #include <iostream>
 #include <regex>
 #include <string>
@@ -40,33 +41,32 @@ void remove_tspan() {
 
         outFile << line << '\n';
     }
-    }
+}
 
 
 void round_off() {
 
-  ifstream infile("test.svg");
-  ofstream outfile("new.svg");
-  string line;
-  while(getline(infile,line))
-    {
-    regex e("([\"\\:][0-9]+\\.[0-9])[0-9]*");
-    smatch match;
-    string newline = line;
-    while(regex_search(line,match,e)){
-      for (auto x:match){
-	string replacement = "$1";
-	newline = regex_replace(newline,e,replacement);
+    ifstream infile("replaced.svg");
+    ofstream outfile("roundoff.svg");
+    string line;
+    while (getline(infile, line)) {
+        regex e("([\"\\:][0-9]+\\.[0-9])[0-9]*");
+        smatch match;
+        string newline = line;
+        while (regex_search(line, match, e)) {
+            for (auto x:match) {
+                string replacement = "$1";
+                newline = regex_replace(newline, e, replacement);
+            }
+            line = match.suffix().str();
         }
-      line = match.suffix().str();
-     }
-    outfile << newline << endl;
-  }
+        outfile << newline << endl;
+    }
 }
 
 
 int main() {
-  remove_tspan();
-  round_off();
+    remove_tspan();
+    round_off();
     return 0;
 }
